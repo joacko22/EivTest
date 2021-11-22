@@ -24,12 +24,12 @@ public class ProvinciaController {
 	}
 
 	@PutMapping()
-	public Provincia update(@PathVariable Integer id, @RequestBody Provincia p) throws Exception {
+	public Provincia update(@PathVariable("id_provincia") Integer id, @RequestBody Provincia p) throws Exception {
 		return provinciaServicio.actualizar(id, p);
 	}
 
 	@DeleteMapping()
-	public void eliminar(@PathVariable Integer id) {
+	public void eliminar(@PathVariable("id_provincia") Integer id) {
 		provinciaServicio.eliminar(id);
 	}
 

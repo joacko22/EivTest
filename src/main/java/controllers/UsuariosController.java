@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import models.Usuarios;
@@ -29,7 +31,7 @@ public class UsuariosController {
 	}
 
 	@PutMapping()
-	public Usuarios actualizar(Integer id, Usuarios user) throws Exception {
+	public Usuarios actualizar(@PathVariable("id_tipodocumento") Integer id,@RequestBody Usuarios user) throws Exception {
 		return userService.update(id, user);
 	}
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN')")

@@ -27,7 +27,7 @@ public class LocalidadController {
 	}
 
 	@GetMapping()
-	public List<Localidad> listarProvincias(Integer id) throws Exception {
+	public List<Localidad> listarProvincias(@PathVariable("id_provincias") Integer id) throws Exception {
 
 		return localserv.listarProvincias(id);
 	}
@@ -38,11 +38,11 @@ public class LocalidadController {
 	}
 
 	@PutMapping()
-	public Localidad update(@PathVariable Integer id,@RequestBody Localidad l) throws Exception {
+	public Localidad update(@PathVariable("id_localidad") Integer id,@RequestBody Localidad l) throws Exception {
      return localserv.actualizar(id, l);
 	}
 	@DeleteMapping()
-	public void eliminar(@PathVariable Integer id) {
+	public void eliminar(@PathVariable("id_localidad") Integer id) {
 		localserv.eliminar(id);
 	}
 	

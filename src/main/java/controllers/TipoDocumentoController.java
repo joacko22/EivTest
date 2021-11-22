@@ -32,12 +32,12 @@ public class TipoDocumentoController {
 	}
 
 	@PutMapping()
-	public TiposDocumentos update(@PathVariable Integer id, @RequestBody TiposDocumentos l) throws Exception {
+	public TiposDocumentos update(@PathVariable("id_tipodocumento") Integer id, @RequestBody TiposDocumentos l) throws Exception {
 		return documentosService.actualizar(id, l);
 	}
 
 	@DeleteMapping()
-	public void eliminar(@PathVariable Integer id) {
+	public void eliminar(@PathVariable("id_tipodocumento") Integer id) {
 		documentosService.eliminar(id);
 	}
 }
