@@ -1,4 +1,4 @@
-package repositorys;
+package com.apirest.eivtest.repositorys;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import models.Persona;
+import com.apirest.eivtest.models.Persona;
 @Repository
 public interface PersonaRepository extends JpaRepository<Persona,Integer>  {
 	@Query("SELECT a from Persona a WHERE a.correo_electronico LIKE :correo_electronico")

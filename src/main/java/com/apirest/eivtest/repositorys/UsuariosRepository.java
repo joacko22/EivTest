@@ -1,14 +1,14 @@
-package repositorys;
+package com.apirest.eivtest.repositorys;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import models.Usuarios;
+import com.apirest.eivtest.models.Usuario;
 @Repository
-public interface UsuariosRepository extends JpaRepository<Usuarios,Integer>{
+public interface UsuariosRepository extends JpaRepository<Usuario,Integer>{
 	
 	@Query("SELECT a from Usuarios a WHERE a.nombre_usuario LIKE :nombre")
-	public  Usuarios findByUser(@Param("nombre_usuario") String nombre);
+	public  Usuario findByUser(@Param("nombre_usuario") String nombre);
 }

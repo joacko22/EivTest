@@ -1,4 +1,4 @@
-package services;
+package com.apirest.eivtest.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,29 +7,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import models.TiposDocumentos;
-import repositorys.TipoDocumentoRepository;
+import com.apirest.eivtest.models.TipoDocumento;
+import com.apirest.eivtest.repositorys.TipoDocumentoRepository;
 
 @Service
-public class TiposDocumentosService {
+public class TiposDocumentoService {
 
 	@Autowired
 	TipoDocumentoRepository documentoRepo;
 	@Transactional(readOnly = true)
-	public List<TiposDocumentos> obtenerTodas(){
+	public List<TipoDocumento> obtenerTodas(){
 		return documentoRepo.findAll();
 	}
 	@Transactional
-	public TiposDocumentos guardar(TiposDocumentos t) {
+	public TipoDocumento guardar(TipoDocumento t) {
 	return documentoRepo.save(t);	
 	}
 	@Transactional
-	public TiposDocumentos actualizar(Integer id,TiposDocumentos t) throws Exception {
+	public TipoDocumento actualizar(Integer id,TipoDocumento t) throws Exception {
 		t = findByid(id);
 		return documentoRepo.save(t);
 	}
-	public TiposDocumentos findByid(Integer id) throws Exception {
-		Optional<TiposDocumentos> res = documentoRepo.findById(id);
+	public TipoDocumento findByid(Integer id) throws Exception {
+		Optional<TipoDocumento> res = documentoRepo.findById(id);
 		if (res.isPresent()) {
 			return res.get();
 		}else {

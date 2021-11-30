@@ -1,4 +1,4 @@
-package services;
+package com.apirest.eivtest.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import models.Localidad;
-import repositorys.LocalidadRepository;
+import com.apirest.eivtest.models.Localidad;
+import com.apirest.eivtest.repositorys.LocalidadRepository;
 
 @Service
 public class LocalidadService {

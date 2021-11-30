@@ -1,4 +1,4 @@
-package services;
+package com.apirest.eivtest.services;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import models.Persona;
-import repositorys.PersonaRepository;
+import com.apirest.eivtest.models.Persona;
+import com.apirest.eivtest.repositorys.PersonaRepository;
 
 @Service
 public class PersonaService {
@@ -54,7 +54,7 @@ public class PersonaService {
 	}
 
 	public void validar(Persona p) throws Exception {
-		if (!p.getGenero().equals("M") || !p.getGenero().equals("F") || p.getGenero() == null) {
+		if (!p.getGenero().toString().equals("M") || !p.getGenero().toString().equals("F") || p.getGenero() == null) {
 			throw new Exception("Genero ingresado incorrecto");
 		}
 		if (p.getEmail() == null || p.getEmail().isEmpty() || p.getEmail().contains("  ")) {
@@ -74,4 +74,5 @@ public class PersonaService {
 		}
 	}
 
+   
 }

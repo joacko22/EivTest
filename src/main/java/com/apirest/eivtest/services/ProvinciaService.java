@@ -1,4 +1,4 @@
-package services;
+package com.apirest.eivtest.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,9 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
-import models.Provincia;
-import repositorys.ProvinciasRepository;
+import com.apirest.eivtest.models.Provincia;
+import com.apirest.eivtest.repositorys.ProvinciasRepository;
 
 @Service
 public class ProvinciaService {

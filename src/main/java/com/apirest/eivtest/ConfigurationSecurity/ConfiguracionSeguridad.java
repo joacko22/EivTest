@@ -1,4 +1,4 @@
-package ConfiguacionSeguridad;
+package com.apirest.eivtest.ConfigurationSecurity;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import services.UsuarioService;
+import com.apirest.eivtest.services.UsuarioService;
 
 @Configuration
 @EnableWebSecurity
