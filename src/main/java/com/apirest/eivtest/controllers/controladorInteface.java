@@ -27,11 +27,11 @@ public interface controladorInteface<M extends Object> {
     @GetMapping("/{id}")
     public Object getOne(@PathVariable Integer id) throws Exception;
 
-    @PostMapping
+    @PostMapping()
     public Object create(@RequestBody M model)
             throws Exception;
 
-    @PutMapping
+    @PutMapping()
     public Object edit(@RequestBody M model)
             throws Exception;
 

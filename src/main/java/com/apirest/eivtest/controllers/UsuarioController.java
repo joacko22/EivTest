@@ -10,6 +10,7 @@ import com.apirest.eivtest.services.UsuarioService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  *
@@ -18,6 +19,7 @@ import org.springframework.http.ResponseEntity;
  *
  * @author usuario
  */
+@RequestMapping("/usuarios")
 public class UsuarioController implements controladorInteface<Usuario> {
 
     @Autowired
